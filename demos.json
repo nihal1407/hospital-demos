@@ -14,5 +14,13 @@
     "path": "demos/deenanath-mangeshkar",
     "branch": "demo/deenanath-mangeshkar",
     "lead_id": "HOS-PUN-002"
+  },
+  {
+    "slug": "shree-hospital-kothrud",
+    "name": "Shree Hospital",
+    "city": "Pune",
+    "path": "demos/shree-hospital-kothrud",
+    "branch": "demo/shree-hospital-kothrud",
+    "lead_id": "HOS-PUN-003"
   }
 ]
