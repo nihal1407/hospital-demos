@@ -1,0 +1,145 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Deenanath Mangeshkar Hospital — Website Concept Demo</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+:root{--teal:#0e7490;--teal2:#06b6d4;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc}
+body{margin:0;font-family:Inter,sans-serif;color:var(--ink);background:var(--bg);overflow-x:hidden}
+.watermark{position:fixed;top:14px;right:14px;background:linear-gradient(135deg,#fef08a,#fde68a);color:#713f12;padding:7px 13px;border-radius:999px;font:800 11px Plus Jakarta Sans;z-index:99;box-shadow:0 6px 18px rgba(0,0,0,.14)}
+.banner{position:sticky;top:0;z-index:98;background:linear-gradient(90deg,#fffbeb,#fef9c3);border-bottom:1px solid #fde68a;padding:8px 16px;text-align:center;font:700 12px Inter;color:#92400e}
+header{position:sticky;top:33px;z-index:97;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font:800 18px Plus Jakarta Sans;color:var(--teal)} .logo small{display:block;font:700 10px Inter;color:var(--muted);letter-spacing:.14em;text-transform:uppercase}
+.menu{display:flex;gap:22px;font:700 13px Inter} .menu a{color:#334155;text-decoration:none;position:relative} .menu a:after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--teal2);transition:.3s} .menu a:hover:after{width:100%}
+.cta{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;padding:11px 18px;border-radius:999px;text-decoration:none;font:800 13px Inter;box-shadow:0 10px 22px rgba(6,182,212,.32);transition:.25s} .cta:hover{transform:translateY(-2px)}
+.hero-wrap{position:relative;overflow:hidden;background:#0f172a}
+.hero-wrap img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42;transform:scale(1.04);transition:transform 6s ease}
+.hero-wrap:hover img.bg{transform:scale(1.08)}
+.hero-wrap:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.92) 0%,rgba(236,254,255,.72) 50%,rgba(15,23,42,.12) 100%)}
+.hero{max-width:1180px;margin:0 auto;padding:48px 20px 32px;display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center;position:relative;z-index:1}
+.hero h1{font:800 40px/1.02 Plus Jakarta Sans;margin:0 0 12px;letter-spacing:-.03em;color:#0f172a}
+.hero h1 span{background:linear-gradient(135deg,var(--teal),var(--teal2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.chip{background:#fff;border:1px solid var(--line);padding:7px 11px;border-radius:999px;font:700 11px Inter;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.hero-card{background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 20px 44px rgba(0,0,0,.18);position:relative}
+.floating{position:absolute;top:-14px;right:18px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 12px;box-shadow:0 10px 24px rgba(0,0,0,.08);font:800 12px Inter;animation:float 3.5s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(6,182,212,.35)}70%{box-shadow:0 0 0 14px rgba(6,182,212,0)}100%{box-shadow:0 0 0 0 rgba(6,182,212,0)}}
+.reveal{opacity:0;transform:translateY(18px);transition:.7s cubic-bezier(.2,.8,.2,1)} .reveal.in{opacity:1;transform:translateY(0)}
+.btn{padding:12px 18px;border-radius:999px;text-decoration:none;font:800 13px Inter;display:inline-block;transition:.25s;cursor:pointer;border:0}
+.btn-primary{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;box-shadow:0 10px 22px rgba(6,182,212,.3);animation:pulse 2.2s infinite}
+.btn-ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.section{max-width:1180px;margin:32px auto;padding:0 20px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;transition:.32s;overflow:hidden} .card:hover{transform:translateY(-7px);box-shadow:0 18px 34px rgba(0,0,0,.09)}
+.card .thumb{height:96px;border-radius:12px;margin:-18px -18px 14px;overflow:hidden;position:relative;background:#ecfeff}
+.card .thumb img{width:100%;height:100%;object-fit:cover;transition:.6s} .card:hover .thumb img{transform:scale(1.06)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.stat{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;border-radius:16px;padding:16px;text-align:center} .stat b{font:800 22px Plus Jakarta Sans} .stat span{font:700 11px Inter;color:#94a3b8;display:block;margin-top:2px;text-transform:uppercase;letter-spacing:.06em}
+.doctors{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.doc{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;text-align:center;transition:.3s} .doc:hover{transform:translateY(-6px);box-shadow:0 16px 30px rgba(0,0,0,.08)}
+.doc .ph{width:76px;height:76px;border-radius:50%;background:linear-gradient(135deg,#ecfeff,#e0f2fe);margin:0 auto 10px;display:grid;place-items:center;font:800 18px Plus Jakarta Sans;color:var(--teal);border:3px solid #fff;box-shadow:0 8px 18px rgba(14,116,144,.16)}
+.carousel{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#fff}
+.track{display:flex;transition:transform .6s cubic-bezier(.2,.8,.2,1)} .slide{min-width:100%;padding:22px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.quote{background:linear-gradient(135deg,#fff,#f8fafc);border:1px solid var(--line);border-radius:14px;padding:16px}
+.dots{display:flex;gap:8px;justify-content:center;margin:12px 0} .dot{width:8px;height:8px;border-radius:999px;background:#cbd5e1;transition:.3s;cursor:pointer} .dot.active{background:var(--teal);width:22px}
+.emergency{background:linear-gradient(135deg,#fef2f2,#fff);border:1px solid #fecaca;border-radius:16px;padding:16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.sticky-bar{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);background:rgba(15,23,42,.96);color:#fff;padding:10px 14px;border-radius:999px;display:flex;gap:10px;align-items:center;box-shadow:0 14px 30px rgba(0,0,0,.22);z-index:96;border:1px solid rgba(255,255,255,.12)} .sticky-bar a{padding:8px 14px;border-radius:999px;text-decoration:none;font:800 12px Inter} .sticky-bar .s-primary{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff} .sticky-bar .s-ghost{background:#fff;color:#0f172a}
+.modal{position:fixed;inset:0;background:rgba(15,23,42,.55);backdrop-filter:blur(6px);display:none;place-items:center;z-index:100;padding:20px}
+.modal.open{display:grid} .modal-card{background:#fff;border-radius:18px;max-width:520px;width:100%;padding:20px;box-shadow:0 20px 50px rgba(0,0,0,.22)}
+.modal-card input, .modal-card select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:12px;font:14px Inter;margin-top:8px}
+.footer{background:#0f172a;color:#cbd5e1;padding:26px 20px;margin-top:36px}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.doctors{grid-template-columns:1fr 1fr}.hero h1{font-size:32px} .stats{grid-template-columns:1fr 1fr} .slide{grid-template-columns:1fr}}
+@media(max-width:640px){.grid,.doctors{grid-template-columns:1fr} .menu{display:none} .hero h1{font-size:28px}}
+</style></head><body>
+<div class="watermark">Website Concept — Demo</div>
+<div class="banner">Concept created for demonstration purposes — Not affiliated with or operated by the hospital</div>
+<header><div class="nav"><div class="logo">DEENANATH MANGESHKAR HOSPITAL<small>Research Centre • Erandawane, Pune</small></div><nav class="menu"><a href="#departments">Departments</a><a href="#doctors">Doctors</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></nav><a class="cta" href="#" onclick="openModal(event)">Book Appointment →</a></div></header>
+
+<div class="hero-wrap">
+<img class="bg" src="https://images.unsplash.com/photo-1586776802477-3680284edb9e?w=1600&q=80&auto=format&fit=crop" alt="Hospital backdrop — generic stock, not Deenanath Mangeshkar Hospital" loading="eager">
+<section class="hero">
+<div>
+<div class="chips"><span class="chip">★ 4.3 · 4200+ reviews</span><span class="chip">Multispeciality</span><span class="chip">24×7 Emergency</span><span class="chip">Est. 1950s</span></div>
+<h1>Care that Pune <span>trusts</span> — now with a <span>site that converts</span></h1>
+<p>Heritage hospital, modern patient journey. This v4 concept adds parallax imagery, hover-zoom departments, count-up trust signals, carousel reviews, and a demo appointment modal — all mobile-first and watermarked.</p>
+<div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap"><a class="btn btn-primary" href="#" onclick="openModal(event)">Book Appointment</a><a class="btn btn-ghost" href="tel:+912066096000">Emergency: +91 20 4915 3000</a></div>
+<div class="stats">
+<div class="stat"><b data-count="70">0</b><span>Years</span></div>
+<div class="stat"><b data-count="2100">0</b><span>Reviews</span></div>
+<div class="stat"><b data-count="6">0</b><span>Departments</span></div>
+<div class="stat"><b>24×7</b><span>Emergency</span></div>
+</div>
+</div>
+<div class="hero-card">
+<div class="floating">⚡ Modal demo — no backend</div>
+<h3 style="margin:0 0 8px;font:800 15px Plus Jakarta Sans">Why v4 wins</h3>
+<ul style="margin:0;padding-left:18px;color:#475569;font:13px/1.7 Inter">
+<li><b>Parallax image hero</b> — premium depth</li>
+<li><b>Zoom-on-hover</b> department imagery</li>
+<li><b>Count-up + carousel</b> — motion builds trust</li>
+<li><b>Appointment modal</b> — 1-tap capture (demo)</li>
+<li><b>Sticky bottom bar</b> — never lose CTA</li>
+</ul>
+<div style="margin-top:12px;background:linear-gradient(135deg,#ecfeff,#fff);border:1px solid #cffafe;border-radius:12px;padding:10px;font:700 12px Inter;color:#0e7490">This is ~10% of what we can build — final site with your branding, CMS, SEO & real appointment integration.</div>
+</div>
+</section>
+</div>
+
+<section class="section reveal" id="departments"><h2>Departments</h2><p style="color:var(--muted);font:13px Inter;margin:0 0 14px">Imagery is generic stock for concept — not Deenanath Mangeshkar Hospital’s actual facilities</p>
+<div class="grid">
+<div class="card"><div class="thumb"><img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80&auto=format&fit=crop" alt=""></div><h3>Cardiology</h3><p>Cath lab & continuity care — intervention to follow-up.</p></div>
+<div class="card"><div class="thumb"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80&auto=format&fit=crop" alt=""></div><h3>Oncology</h3><p>Tumor board-led multidisciplinary pathways.</p></div>
+<div class="card"><div class="thumb"><img src="https://images.unsplash.com/photo-1580281658626-ee379f3cce1f?w=600&q=80&auto=format&fit=crop" alt=""></div><h3>Orthopedics</h3><p>Joint, spine, trauma + rehab integration.</p></div>
+<div class="card"><div class="thumb"><img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&q=80&auto=format&fit=crop" alt=""></div><h3>Neurology</h3><p>Stroke, epilepsy & neuro-diagnostics.</p></div>
+<div class="card"><div class="thumb"><img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80&auto=format&fit=crop" alt=""></div><h3>Gastroenterology</h3><p>Endoscopy & digestive health.</p></div>
+<div class="card"><div class="thumb"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80&auto=format&fit=crop" alt=""></div><h3>Emergency & ICU</h3><p>24×7 rapid response and critical care.</p></div>
+</div></section>
+
+<section class="section reveal" id="doctors"><h2>Doctors</h2><p style="color:var(--muted);font:13px Inter;margin:0 0 14px">Placeholder — real profiles from verified sources in production. No fabricated credentials.</p>
+<div class="doctors">
+<div class="doc"><div class="ph">DR</div><b>Doctor Profile</b><p style="color:var(--muted);font:12px Inter">Demo placeholder</p><a href="#" onclick="openModal(event)" style="font:700 11px Inter;color:var(--teal);text-decoration:none">Book →</a></div>
+<div class="doc"><div class="ph">DR</div><b>Doctor Profile</b><p style="color:var(--muted);font:12px Inter">Demo placeholder</p><a href="#" onclick="openModal(event)" style="font:700 11px Inter;color:var(--teal);text-decoration:none">Book →</a></div>
+<div class="doc"><div class="ph">DR</div><b>Doctor Profile</b><p style="color:var(--muted);font:12px Inter">Demo placeholder</p><a href="#" onclick="openModal(event)" style="font:700 11px Inter;color:var(--teal);text-decoration:none">Book →</a></div>
+<div class="doc"><div class="ph">DR</div><b>Doctor Profile</b><p style="color:var(--muted);font:12px Inter">Demo placeholder</p><a href="#" onclick="openModal(event)" style="font:700 11px Inter;color:var(--teal);text-decoration:none">Book →</a></div>
+</div></section>
+
+<section class="section reveal" id="reviews"><h2>Patient stories</h2><p style="color:var(--muted);font:13px Inter;margin:0 0 12px">Clearly marked demo/sample content — no fabricated testimonials</p>
+<div class="carousel" id="carousel"><div class="track" id="track">
+<div class="slide"><div class="quote"><p>“Modal + sticky bar makes booking feel instant — sample demo content.”</p><small style="color:#94a3b8">— Sample / Demo</small></div><div class="quote"><p>“Parallax hero elevates trust on first scroll — sample.”</p><small style="color:#94a3b8">— Sample / Demo</small></div></div>
+<div class="slide"><div class="quote"><p>“Hover-zoom departments aid scannability — sample.”</p><small style="color:#94a3b8">— Sample / Demo</small></div><div class="quote"><p>“Count-up adds motion without medical claims — sample.”</p><small style="color:#94a3b8">— Sample / Demo</small></div></div>
+</div></div>
+<div class="dots" id="dots"><span class="dot active" data-i="0"></span><span class="dot" data-i="1"></span></div>
+</section>
+
+<section class="section reveal" id="contact"><div class="emergency"><div><b style="color:#dc2626">Emergency 24×7:</b> +91 20 4915 3000 <span style="color:#94a3b8">|</span> Erandawane, Pune • <a href="https://www.google.com/maps/search/Deenanath+Mangeshkar+Hospital+Pune" target="_blank" style="color:var(--teal);font-weight:800">View on Maps →</a></div><a class="btn btn-primary" href="#" onclick="openModal(event)">Get Directions</a></div></section>
+
+<div class="sticky-bar"><span style="font:700 12px Inter">Deenanath Mangeshkar Hospital</span><a class="s-ghost" href="tel:+912066096000">Call</a><a class="s-primary" href="#" onclick="openModal(event)">Book</a></div>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()"><div class="modal-card">
+<h3 style="margin:0 0 6px">Book Appointment — Demo</h3><p style="margin:0;color:var(--muted);font:13px Inter">This is a concept modal — no data is sent. Production would integrate with your HMS.</p>
+<input placeholder="Full name"><input placeholder="Phone"><select><option>Select department</option><option>Cardiology</option><option>Oncology</option><option>Orthopedics</option></select>
+<div style="display:flex;gap:10px;margin-top:14px"><button class="btn btn-ghost" onclick="closeModal()" style="flex:1">Cancel</button><button class="btn btn-primary" style="flex:1" onclick="alert('Demo only — no submission');closeModal()">Submit (demo)</button></div>
+<p style="font:600 11px Inter;color:#94a3b8;margin-top:10px">Watermarked demo • No real appointment is booked.</p>
+</div></div>
+
+<footer class="footer"><div style="max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap"><div><b>Deenanath Mangeshkar Hospital — Demo Concept v4</b><p style="margin:6px 0 0;font:13px/1.6 Inter;color:#94a3b8">Erandawane, Pune • info@dmhospital.org • Public info only. Not affiliated. Watermark visible.<br>Concept by hospital-demos • 23:16 IST 30 Aug 2026 • Branch: demo/deenanath-mangeshkar • Stock images are generic placeholders</p></div><div style="font:700 11px Inter;color:#64748b">No medical claims • Responsive • Modal + Carousel + Count-up</div></div></footer>
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const counters=document.querySelectorAll('[data-count]');
+const cIo=new IntersectionObserver(es=>es.forEach(e=>{
+ if(e.isIntersecting && !e.target.dataset.done){
+  e.target.dataset.done=1;
+  let n=0, target=parseInt(e.target.dataset.count), step=Math.ceil(target/40);
+  const t=setInterval(()=>{n+=step; if(n>=target){n=target;clearInterval(t)} e.target.textContent=n.toLocaleString()+(target===2100?'+':'')},28);
+ }
+}),{threshold:.6});
+counters.forEach(c=>cIo.observe(c));
+let idx=0; const track=document.getElementById('track'), dots=[...document.querySelectorAll('.dot')];
+function go(i){idx=i; track.style.transform=`translateX(-${idx*100}%)`; dots.forEach((d,j)=>d.classList.toggle('active',j===idx))}
+dots.forEach(d=>d.onclick=()=>go(parseInt(d.dataset.i)));
+setInterval(()=>go((idx+1)%2),3800);
+function openModal(e){if(e) e.preventDefault(); document.getElementById('modal').classList.add('open')}
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+</script>
+</body></html>
