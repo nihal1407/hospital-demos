@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "slug": "poona-hospital",
+    "name": "Poona Hospital and Research Centre",
+    "city": "Pune",
+    "path": "demos/poona-hospital",
+    "branch": "demo/poona-hospital",
+    "lead_id": "HOS-PUN-001"
+  }
+]
