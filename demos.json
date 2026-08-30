@@ -6,5 +6,13 @@
     "path": "demos/poona-hospital",
     "branch": "demo/poona-hospital",
     "lead_id": "HOS-PUN-001"
+  },
+  {
+    "slug": "deenanath-mangeshkar",
+    "name": "Deenanath Mangeshkar Hospital",
+    "city": "Pune",
+    "path": "demos/deenanath-mangeshkar",
+    "branch": "demo/deenanath-mangeshkar",
+    "lead_id": "HOS-PUN-002"
   }
 ]
